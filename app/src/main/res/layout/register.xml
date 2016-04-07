@@ -28,7 +28,7 @@
                 android:textSize="@dimen/f21" />
 
             <EditText
-                android:id="@+id/et_usernmae"
+                android:id="@+id/re_usernmae"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
@@ -59,7 +59,7 @@
                 android:textSize="@dimen/f21" />
 
             <EditText
-                android:id="@+id/et_login_paw"
+                android:id="@+id/re_login_paw"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
@@ -104,7 +104,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/bt_register_and_login"
+        android:id="@+id/register_and_login"
         android:layout_width="match_parent"
         android:layout_height="@dimen/spa72"
         android:layout_marginLeft="@dimen/pad3"
