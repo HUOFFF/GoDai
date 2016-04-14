@@ -39,10 +39,14 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.setClass(LoginActivity.this, MainActivity.class);
                     LoginActivity.this.startActivity(intent);
-                    LoginActivity.this.finish();
+
+                    username.setText("");
+                    password.setText("");
+
                 } else {
                     Log.i("TAG", "登录失败");
                     Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_LONG).show();
+                    password.setText("");
                 }
             }
         });

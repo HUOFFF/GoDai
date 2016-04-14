@@ -56,7 +56,6 @@ public class RegisterActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             Intent intent = new Intent();
             intent.setClass(RegisterActivity.this,LoginActivity.class);
-            startActivity(intent);
             this.finish();
             return true;
         }
