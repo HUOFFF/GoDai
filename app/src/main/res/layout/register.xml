@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <include layout="@layout/toolbar"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,12 +25,12 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="用户名"
+                android:text="@string/username"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
             <EditText
-                android:id="@+id/re_usernmae"
+                android:id="@+id/re_username"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
@@ -54,7 +56,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="密码"
+                android:text="@string/password"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
@@ -85,7 +87,7 @@
         android:layout_marginRight="@dimen/pad3"
         android:layout_marginTop="@dimen/pad3"
         android:background="@drawable/blue_button_background_selector"
-        android:text="注册登录"
+        android:text="@string/register1"
         android:textColor="#fafafa"
         android:textSize="@dimen/f21" />
 

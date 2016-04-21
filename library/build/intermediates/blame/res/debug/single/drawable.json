@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\mm\\Desktop\\GoDai-master\\library\\build\\intermediates\\res\\merged\\debug\\drawable\\psts_background_tab.xml",
         "source": "C:\\Users\\mm\\Desktop\\GoDai-master\\library\\res\\drawable\\psts_background_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\mm\\Desktop\\GoDai\\library\\build\\intermediates\\res\\merged\\debug\\drawable\\psts_background_tab.xml",
+        "source": "C:\\Users\\mm\\Desktop\\GoDai\\library\\res\\drawable\\psts_background_tab.xml"
     }
 ]

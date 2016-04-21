@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void findViews() {
-        username = (EditText) findViewById(R.id.re_usernmae);
+        username = (EditText) findViewById(R.id.re_username);
         password = (EditText) findViewById(R.id.re_login_paw);
         RI = (Button) findViewById(R.id.register_and_login);
     }

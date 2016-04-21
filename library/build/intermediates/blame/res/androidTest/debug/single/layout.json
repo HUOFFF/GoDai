@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\mm\\Desktop\\GoDai\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\psts_tab.xml",
+        "source": "C:\\Users\\mm\\Desktop\\GoDai\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\psts_tab.xml"
+    },
+    {
         "merged": "C:\\Users\\mm\\Desktop\\GoDai-master\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\psts_tab.xml",
         "source": "C:\\Users\\mm\\Desktop\\GoDai-master\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\psts_tab.xml"
     }

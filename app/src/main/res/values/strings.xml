@@ -2,14 +2,23 @@
     <string name="app_name">Godai</string>
     <string name="head_name">GO代</string>
 
-
-
     <!--login页面-->
-    <string name="phone_or_username">请输入手机或用户名</string>
+    <string name="phone_or_username">请输入用户名</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="login_pw">登录密码</string>
-    <string name="autoLogin">下次自动登录</string>
+    <string name="register1">完成注册</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="destination">快递领取地</string>
+    <string name="dormitory">宿舍地址</string>
+    <string name="money">佣金</string>
+    <string name="pub">发布任务</string>
+    <string name="destination1">请输入快递领取地</string>
+    <string name="dormitory1">请输入宿舍地址</string>
+    <string name="money1">请输入悬赏的佣金</string>
+    <string name="pub_title">宿舍地址:\n快递领取地:\n佣金:</string>
+
 
 
 

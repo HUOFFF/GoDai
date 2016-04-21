@@ -2,5 +2,9 @@
     {
         "merged": "C:\\Users\\mm\\Desktop\\GoDai-master\\library\\build\\intermediates\\res\\merged\\debug\\layout\\psts_tab.xml",
         "source": "C:\\Users\\mm\\Desktop\\GoDai-master\\library\\res\\layout\\psts_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\mm\\Desktop\\GoDai\\library\\build\\intermediates\\res\\merged\\debug\\layout\\psts_tab.xml",
+        "source": "C:\\Users\\mm\\Desktop\\GoDai\\library\\res\\layout\\psts_tab.xml"
     }
 ]
