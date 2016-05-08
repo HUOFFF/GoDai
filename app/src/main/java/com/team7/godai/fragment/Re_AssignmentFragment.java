@@ -20,10 +20,10 @@ import java.util.ArrayList;
 
 public class Re_AssignmentFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private ArrayList<Assignment> assignment= new ArrayList<>();
+    private ArrayList<Assignment> assignment = new ArrayList<>();
     public static Re_AssignmentFragment re_assignmentFragment;
 
-    public Re_AssignmentFragment(){
+    public Re_AssignmentFragment() {
         re_assignmentFragment = this;
     }
 
@@ -40,17 +40,17 @@ public class Re_AssignmentFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         findView();
         initData();
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-            mRecyclerView.setAdapter(new Assignment_RecyclerAdapter(getActivity(), assignment));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
+        mRecyclerView.setAdapter(new Assignment_RecyclerAdapter(getActivity(), assignment));
     }
 
-    public void findView(){
-        mRecyclerView = (RecyclerView)mRecyclerView.findViewById(R.id.recycler_view);
+    public void findView() {
+        mRecyclerView = (RecyclerView) mRecyclerView.findViewById(R.id.recycler_view);
     }
 
-    public void initData(){
+    public void initData() {
         Re_AssignmentService assignmentService = new Re_AssignmentService(getActivity());
-        assignment=assignmentService.getRe_Assignment(LoginActivity.getUsername());
+        assignment = assignmentService.getRe_Assignment(LoginActivity.getUsername());
 
     }
 }

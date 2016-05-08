@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Created by mai on 2016/5/3.
  */
-public class User_edit extends AppCompatActivity{
+public class User_edit extends AppCompatActivity {
 
     Toolbar mToolbar;
     Button mButton;
@@ -33,7 +33,7 @@ public class User_edit extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user);
 
-        mToolbar = (Toolbar)findViewById(R.id.tool_bar);
+        mToolbar = (Toolbar) findViewById(R.id.tool_bar);
 
         mToolbar.setTitle("修改信息");
         mToolbar.setTitleTextColor(0xffffffff);
@@ -41,13 +41,13 @@ public class User_edit extends AppCompatActivity{
     }
 
 
-    public void initView(){
-        TextView gender = (TextView)findViewById(R.id.user_info_gender);
-        TextView user_id = (TextView)findViewById(R.id.user_info_id);
-        TextView phone = (TextView)findViewById(R.id.user_info_phone);
-        TextView school = (TextView)findViewById(R.id.user_info_school);
-        TextView user_type = (TextView)findViewById(R.id.user_info_type);
-        mButton = (Button)findViewById(R.id.update_user_info);
+    public void initView() {
+        TextView gender = (TextView) findViewById(R.id.user_info_gender);
+        TextView user_id = (TextView) findViewById(R.id.user_info_id);
+        TextView phone = (TextView) findViewById(R.id.user_info_phone);
+        TextView school = (TextView) findViewById(R.id.user_info_school);
+        TextView user_type = (TextView) findViewById(R.id.user_info_type);
+        mButton = (Button) findViewById(R.id.update_user_info);
 
         UserService userService = new UserService(getApplicationContext());
         ArrayList<User> user_info = userService.getUser_info(LoginActivity.getUsername());
@@ -55,10 +55,9 @@ public class User_edit extends AppCompatActivity{
         user_id.setText(user_info.get(0).getUser_id());
         phone.setText(user_info.get(0).getPhone());
         school.setText(user_info.get(0).getSchool());
-        if(userService.is_express(LoginActivity.getUsername())){
+        if (userService.is_express(LoginActivity.getUsername())) {
             user_type.setText("发布者&快递员");
-        }
-        else  user_type.setText("发布者");
+        } else user_type.setText("发布者");
 
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override

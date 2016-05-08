@@ -17,7 +17,7 @@ import com.team7.godai.Service.UserService;
 /**
  * Created by mai on 2016/5/3.
  */
-public class Courier_edit_P extends AppCompatActivity{
+public class Courier_edit_P extends AppCompatActivity {
 
     Toolbar mToolbar;
     EditText idText;
@@ -27,7 +27,7 @@ public class Courier_edit_P extends AppCompatActivity{
 
     public Courier_edit_P() {
         // Required empty public constructor
-        courier_edit_p=this;
+        courier_edit_p = this;
 
     }
 
@@ -36,10 +36,10 @@ public class Courier_edit_P extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.be_courier);
 
-        mToolbar = (Toolbar)findViewById(R.id.tool_bar);
-        idText = (EditText)findViewById(R.id.be_courier_id);
-        phoneText = (EditText)findViewById(R.id.be_courier_phone);
-        mButton = (Button)findViewById(R.id.submit_real);
+        mToolbar = (Toolbar) findViewById(R.id.tool_bar);
+        idText = (EditText) findViewById(R.id.be_courier_id);
+        phoneText = (EditText) findViewById(R.id.be_courier_phone);
+        mButton = (Button) findViewById(R.id.submit_real);
 
         mToolbar.setTitle("申请快递员");
         mToolbar.setTitleTextColor(0xffffffff);
@@ -63,7 +63,7 @@ public class Courier_edit_P extends AppCompatActivity{
                                 startActivity(intent);
                                 finish();
                             }
-                        }).setNegativeButton("取消",null)
+                        }).setNegativeButton("取消", null)
                         .show();
             }
         });
