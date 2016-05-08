@@ -11,19 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.team7.godai.ExpActivity;
-import com.team7.godai.LoginActivity;
-import com.team7.godai.PubActivity;
+import com.team7.godai.activities.ExpActivity;
+import com.team7.godai.activities.LoginActivity;
 import com.team7.godai.R;
 import com.team7.godai.Service.AssignmentService;
 import com.team7.godai.Service.Re_AssignmentService;
 import com.team7.godai.domain.Assignment;
-import com.team7.godai.fragment.AssignmentFragment;
-import com.team7.godai.fragment.Re_AssignmentFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by mm on 2016/4/20.

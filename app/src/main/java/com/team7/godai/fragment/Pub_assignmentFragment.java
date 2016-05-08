@@ -12,16 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.team7.godai.ExpActivity;
-import com.team7.godai.LoginActivity;
-import com.team7.godai.PubActivity;
+import com.team7.godai.activities.LoginActivity;
+import com.team7.godai.activities.PubActivity;
 import com.team7.godai.R;
 import com.team7.godai.Service.AddressService;
 import com.team7.godai.Service.AssignmentService;
-import com.team7.godai.adapter.Address_Adapter;
 import com.team7.godai.domain.Assignment;
 
-import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
@@ -83,6 +80,7 @@ public class Pub_assignmentFragment extends Fragment {
                         .show();
             }
         });
+
 
         pub_bt.setOnClickListener(new View.OnClickListener() {
             @Override

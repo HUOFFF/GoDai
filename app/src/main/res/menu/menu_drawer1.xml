@@ -6,12 +6,6 @@
             android:title="个人信息"></item>
         <item
             android:id="@+id/item_two"
-            android:title="收货地址"></item>
-        <item
-            android:id="@+id/item_three"
-            android:title="成为快递员"></item>
-        <item
-            android:id="@+id/item_four"
-            android:title="切换为快递员"></item>
+            android:title="切换为发布者"></item>
     </group>
 </menu>

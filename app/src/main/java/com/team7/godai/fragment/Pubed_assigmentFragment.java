@@ -3,14 +3,13 @@ package com.team7.godai.fragment;
  import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
- import android.support.v4.widget.SwipeRefreshLayout;
  import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
- import com.team7.godai.LoginActivity;
+ import com.team7.godai.activities.LoginActivity;
  import com.team7.godai.R;
 import com.team7.godai.adapter.Pub_As_RecycleAdapter;
 import com.team7.godai.Service.AssignmentService;

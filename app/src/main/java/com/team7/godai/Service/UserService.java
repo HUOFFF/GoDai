@@ -62,4 +62,33 @@ public class UserService {
 		return user_info;
 	}
 
+	public void add_id_phone(String user_id,String phone,String username){
+		SQLiteDatabase sdb = dbHelper.getWritableDatabase();
+		String sql = "update user set user_id = ?,phone = ? where username=?";
+		Object obj[]={user_id,phone,username};
+		sdb.execSQL(sql, obj);
+	}
+
+	public boolean is_express(String username){
+		String id ="-1";
+		String phone = "-1";
+		SQLiteDatabase sdb = dbHelper.getReadableDatabase();
+		String sql = "select user_id,phone from user where username=?";
+		Cursor cursor = sdb.rawQuery(sql,new String[]{username});
+		while(cursor.moveToNext()){
+			id = cursor.getString(cursor.getColumnIndex("user_id"));
+			phone = cursor.getString(cursor.getColumnIndex("phone"));
+		}
+		cursor.close();
+		if(id.equals("")||phone.equals("")) return false;
+		else return true;
+	}
+
+	public void update_user(String gender,String password,String phone,String school,String username){
+		SQLiteDatabase sdb = dbHelper.getWritableDatabase();
+		String sql = "update user set gender = ?,password = ?,phone = ?,school = ? where username=?";
+		Object obj[]={gender,password,phone,school,username};
+		sdb.execSQL(sql, obj);
+	}
+
 }

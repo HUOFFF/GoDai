@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.team7.godai.PubActivity;
+import com.team7.godai.activities.PubActivity;
 import com.team7.godai.R;
 import com.team7.godai.Service.AssignmentService;
 import com.team7.godai.Service.His_AssignmentService;

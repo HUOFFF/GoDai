@@ -4,12 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
-import android.view.ViewGroup;
-
-import com.team7.godai.fragment.AssignmentFragment;
-import com.team7.godai.fragment.Pub_assignmentFragment;
-import com.team7.godai.fragment.Pubed_assigmentFragment;
-import com.team7.godai.fragment.Re_AssignmentFragment;
 
 import java.util.List;
 
