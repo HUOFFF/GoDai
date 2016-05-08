@@ -14,7 +14,12 @@
     android:background="#ffff"
     android:foreground="?android:attr/selectableItemBackground"
     >
+
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/pub_item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -25,33 +30,40 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_destination1"
+            android:id="@+id/re1_destination1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/destination"/>
         <TextView
-            android:id="@+id/tv_dormitory1"
+            android:id="@+id/re1_dormitory1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_destination1"
+            android:layout_below="@+id/re1_destination1"
             android:text="@string/dormitory"/>
         <TextView
-            android:id="@+id/tv_money1"
+            android:id="@+id/re1_money1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_dormitory1"
+            android:layout_below="@+id/re1_dormitory1"
             android:text="@string/money"/>
         <TextView
-            android:id="@+id/tv_user1"
+            android:id="@+id/pub_user1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_money1"
+            android:layout_below="@+id/re1_money1"
             android:text="@string/pub_username"/>
+        <TextView
+            android:id="@+id/re_user1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pub_user1"
+            android:text="@string/re_username"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_user1"
+            android:layout_below="@+id/re_user1"
             android:text="@string/status"/>
+
     </RelativeLayout>
 
         <RelativeLayout
@@ -60,37 +72,59 @@
             android:layout_marginLeft="90dp"
             android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_destination"
+            android:id="@+id/re1_destination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""/>
         <TextView
-            android:id="@+id/tv_dormitory"
+            android:id="@+id/re1_dormitory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_destination"
+            android:layout_below="@+id/re1_destination"
             android:text=""/>
 
         <TextView
-            android:id="@+id/tv_money"
+            android:id="@+id/re1_money"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_dormitory"
+            android:layout_below="@+id/re1_dormitory"
             android:text=""/>
 
             <TextView
-                android:id="@+id/tv_user"
+                android:id="@+id/re1_pub_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_money"
+                android:layout_below="@+id/re1_money"
                 android:text=""/>
 
             <TextView
-                android:id="@+id/tv_status"
+                android:id="@+id/re1_re_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_user"
+                android:layout_below="@+id/re1_pub_user"
+                android:text=""/>
+            <TextView
+                android:id="@+id/re1_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/re1_re_user"
                 android:text=""/>
         </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/pub_item_title">
+
+        <Button
+            android:id="@+id/assignment_isreceive"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:text="@string/isreceive"
+            android:textColor="@color/cor4"
+            android:background="@drawable/green_button_background_selector"/>
+    </LinearLayout>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

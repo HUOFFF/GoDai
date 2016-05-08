@@ -10,6 +10,10 @@ public class Assignment implements Serializable {
     private String destination;
     private String dormitory;
     private String money;
+    private String status;
+    private String user;
+    private String re_user;
+    private String re_OR_not;
 
     public Assignment() {
         super();
@@ -21,6 +25,8 @@ public class Assignment implements Serializable {
         this.destination=destination;
         this.dormitory=dormitory;
         this.money=money;
+        this .status = status;
+        this.user = user;
     }
 
     public int getAssignment_id() {return assignment_id;}
@@ -35,10 +41,14 @@ public class Assignment implements Serializable {
     public void setDormitory(String dormitory) { this.dormitory = dormitory;}
     public String getMoney() {return money;}
     public void setMoney(String money) {this.money = money;}
+    public String getStatus() {return status;}
+    public void setStatus(String status) {this.status = status;}
+    public String getUser() {return user;}
+    public void setUser(String user) {this.user = user;}
+    public String getRe_User() {return re_user;}
+    public void setRe_User(String re_user) {this.re_user = re_user;}
+    public String getre_OR_not() {return re_OR_not;}
+    public void setre_OR_not(String re_OR_not) {this.re_OR_not = re_OR_not;}
 
-    @Override
-    public String toString() {
-        return "Assignment [assignment_id=" + assignment_id + ", destination=" + destination + ", dormitory="
-                + dormitory +  ",money="+ money+"]";
-    }
+
 }

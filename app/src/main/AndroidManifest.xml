@@ -15,8 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".PubActivity"/>
+        <activity android:name=".ExpActivity"/>
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".User_edit"/>
+        <activity android:name=".Location_edit"/>
+        <activity android:name=".Courier_edit_P"/>
+        <activity android:name=".User_edit_P"/>
+        <activity android:name=".Location_edit_P"/>
     </application>
 
 </manifest>

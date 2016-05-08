@@ -4,18 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/pad3"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="10dp"
+        android:text="     请输入真实的身份证信息和手机号码，提交成功后，即可成为快递员。"
+        android:textColor="@color/textcolor"
+        android:textSize="20dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/pad3"
         android:layout_marginRight="@dimen/pad3"
+        android:layout_marginTop="10dp"
         android:background="@drawable/corner_round"
         android:orientation="vertical" >
 
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/spa72"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -23,16 +40,16 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="@string/destination"
+                android:text="@string/id"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
             <EditText
-                android:id="@+id/destination"
+                android:id="@+id/be_courier_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="@string/destination1"
+                android:hint="18位身份证号码"
                 android:textColor="@color/textcolor"
                 android:textColorHint="@color/colorhint"
                 android:textSize="@dimen/f21" />
@@ -54,16 +71,16 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="@string/dormitory"
+                android:text="@string/phone"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
-            <Button
-                android:id="@+id/dormitory"
+            <EditText
+                android:id="@+id/be_courier_phone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="@string/dormitory1"
+                android:hint="11位手机号码"
                 android:textColor="@color/textcolor"
                 android:textColorHint="@color/colorhint"
                 android:textSize="@dimen/f21" />
@@ -74,42 +91,18 @@
             android:layout_height="1dp"
             android:background="@color/linecolor" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/spa72"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/pad3"
-                android:layout_marginRight="2dp"
-                android:text="@string/money"
-                android:textColor="@color/textcolor"
-                android:textSize="@dimen/f21" />
-
-            <EditText
-                android:id="@+id/money"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:hint="@string/money1"
-                android:textColor="@color/textcolor"
-                android:textColorHint="@color/colorhint"
-                android:textSize="@dimen/f21" />
-        </LinearLayout>
 
     </LinearLayout>
+
     <Button
-        android:id="@+id/pub"
+        android:id="@+id/submit_real"
         android:layout_width="match_parent"
         android:layout_height="@dimen/spa72"
         android:layout_marginLeft="@dimen/pad3"
         android:layout_marginRight="@dimen/pad3"
         android:layout_marginTop="@dimen/pad3"
         android:background="@drawable/blue_button_background_selector"
-        android:text="@string/pub"
+        android:text="提交实名信息"
         android:textColor="#fafafa"
         android:textSize="@dimen/f21" />
 

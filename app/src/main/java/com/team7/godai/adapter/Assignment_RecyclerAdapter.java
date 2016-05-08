@@ -9,10 +9,8 @@ import android.widget.TextView;
 
 import com.team7.godai.R;
 import com.team7.godai.domain.Assignment;
-import com.team7.godai.fragment.AssignmentFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by mm on 2016/4/20.
@@ -23,7 +21,7 @@ public class Assignment_RecyclerAdapter extends RecyclerView.Adapter<Assignment_
     private Context mContext;
     private ArrayList<Assignment> Assignment;
 
-    public Assignment_RecyclerAdapter(Context mContext,ArrayList Assignment) {
+    public Assignment_RecyclerAdapter(Context mContext, ArrayList Assignment) {
         this.mContext = mContext;
         this.Assignment = Assignment;
     }
@@ -39,10 +37,12 @@ public class Assignment_RecyclerAdapter extends RecyclerView.Adapter<Assignment_
         holder.destination.setText(Assignment.get(position).getDestination());
         holder.dormitory.setText(Assignment.get(position).getDormitory());
         holder.money.setText(Assignment.get(position).getMoney());
+        holder.user.setText(Assignment.get(position).getUser());
+        holder.status.setText(Assignment.get(position).getStatus());
     }
 
     @Override
-    public int getItemCount() {
+    public  int getItemCount() {
         return Assignment.size();
     }
 
@@ -51,12 +51,18 @@ public class Assignment_RecyclerAdapter extends RecyclerView.Adapter<Assignment_
         public TextView dormitory;
         public TextView destination;
         public TextView money;
+        public TextView user;
+        public TextView status;
+
         public ViewHolder(View mView) {
             super(mView);
             this.mView = mView;
             destination = (TextView)mView.findViewById(R.id.tv_destination);
             dormitory = (TextView)mView.findViewById(R.id.tv_dormitory);
             money = (TextView)mView.findViewById(R.id.tv_money);
+            user = (TextView)mView.findViewById(R.id.tv_user);
+            status = (TextView)mView.findViewById(R.id.tv_status);
+
         }
     }
 

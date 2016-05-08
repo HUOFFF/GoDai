@@ -14,16 +14,23 @@
     android:background="#ffff"
     android:foreground="?android:attr/selectableItemBackground"
     >
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="30dp">
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <TextView
             android:id="@+id/tv_destination1"
             android:layout_width="wrap_content"
@@ -46,51 +53,71 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_money1"
-            android:text="@string/pub_username"/>
+            android:text="@string/username"/>
         <TextView
+            android:id="@+id/tv_status1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_user1"
             android:text="@string/status"/>
+
     </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="20dp"
             android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_destination"
+            android:id="@+id/re_destination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""/>
         <TextView
-            android:id="@+id/tv_dormitory"
+            android:id="@+id/re_dormitory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_destination"
+            android:layout_below="@+id/re_destination"
             android:text=""/>
 
         <TextView
-            android:id="@+id/tv_money"
+            android:id="@+id/re_money"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_dormitory"
+            android:layout_below="@+id/re_dormitory"
             android:text=""/>
 
             <TextView
-                android:id="@+id/tv_user"
+                android:id="@+id/re_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_money"
+                android:layout_below="@+id/re_money"
                 android:text=""/>
 
             <TextView
-                android:id="@+id/tv_status"
+                android:id="@+id/re_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_user"
+                android:layout_below="@+id/re_user"
                 android:text=""/>
         </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/item_title">
+
+    <Button
+        android:id="@+id/assignment_receive"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:text="@string/receive"
+        android:textColor="@color/cor4"
+        android:background="@drawable/green_button_background_selector"/>
+    </LinearLayout>
+
     </RelativeLayout>
 </android.support.v7.widget.CardView>

@@ -15,11 +15,24 @@
     <string name="money">佣金</string>
     <string name="pub">发布任务</string>
     <string name="destination1">请输入快递领取地</string>
-    <string name="dormitory1">请输入宿舍地址</string>
+    <string name="dormitory1">请选择宿舍地址</string>
     <string name="money1">请输入悬赏的佣金</string>
-    <string name="pub_title">宿舍地址:\n快递领取地:\n佣金:</string>
+    <string name="user1">用户名</string>
+    <string name="status">状态</string>
+    <string name="receive">领取任务</string>
+    <string name="isreceive">确认收货</string>
+    <string name="pub_username">发布任务者</string>
+    <string name="re_username">领取任务者</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 
-
+    <!--个人信息页面-->
+    <string name="nickname">昵称</string>
+    <string name="user_type">用户类型</string>
+    <string name="id">身份证</string>
+    <string name="sex">性别</string>
+    <string name="phone">手机号码</string>
+    <string name="school">学校</string>
 
 
 </resources>

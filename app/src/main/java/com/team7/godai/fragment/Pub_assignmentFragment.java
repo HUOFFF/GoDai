@@ -1,5 +1,7 @@
 package com.team7.godai.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,9 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.team7.godai.ExpActivity;
+import com.team7.godai.LoginActivity;
+import com.team7.godai.PubActivity;
 import com.team7.godai.R;
-import com.team7.godai.database.AssignmentService;
+import com.team7.godai.Service.AddressService;
+import com.team7.godai.Service.AssignmentService;
+import com.team7.godai.adapter.Address_Adapter;
 import com.team7.godai.domain.Assignment;
+
+import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  * Created by mm on 2016/4/20.
@@ -20,9 +31,10 @@ import com.team7.godai.domain.Assignment;
 public class Pub_assignmentFragment extends Fragment {
     private View mParentView;
     private EditText destination;
-    private EditText dormitory;
+    private Button dormitory;
     private EditText money;
     private Button pub_bt;
+    String[] address;
 
     @Nullable
     @Override
@@ -39,34 +51,100 @@ public class Pub_assignmentFragment extends Fragment {
 
     }
 
-    public void findView(){
-        destination = (EditText)mParentView.findViewById(R.id.destination);
-        dormitory = (EditText)mParentView.findViewById(R.id.dormitory);
-        money = (EditText)mParentView.findViewById(R.id.money);
-        pub_bt = (Button)mParentView.findViewById(R.id.pub);
+    public void findView() {
+        destination = (EditText) mParentView.findViewById(R.id.destination);
+        dormitory = (Button) mParentView.findViewById(R.id.dormitory);
+        money = (EditText) mParentView.findViewById(R.id.money);
+        pub_bt = (Button) mParentView.findViewById(R.id.pub);
     }
-    public void Input(){
+
+    public void Input() {
+
+        AddressService addressService = new AddressService(getActivity());
+        ArrayList<String> add_list = addressService.getAddress(LoginActivity.getUsername());
+        address = add_list.toArray(new String[]{});
+
+        dormitory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ChoiceOnClickListener choiceListener = new ChoiceOnClickListener();
+                new AlertDialog.Builder(getActivity())
+                        .setTitle("选择地址")
+                        .setSingleChoiceItems(address, 0, choiceListener)
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                int choicewhich = choiceListener.getWhich();
+                                String str = address[choicewhich];
+                                dormitory.setText("" + str + "");
+                            }
+                        })
+                        .setNegativeButton("取消", null)
+                        .show();
+            }
+        });
 
         pub_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                String mdestination = destination.getText().toString().trim();
-                String mdormitory = dormitory.getText().toString().trim();
-                String mmoney = money.getText().toString().trim();
+                AlertDialog.Builder builder = new AlertDialog.Builder(PubActivity.pubActivity);
+                builder.setTitle("确认发布");
 
-                AssignmentService AS = new AssignmentService(getActivity());
-                Assignment assignment = new Assignment();
-                assignment.setDestination(mdestination);
-                assignment.setDormitory(mdormitory);
-                assignment.setMoney(mmoney);
-                AS.Pub(assignment);
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String mdestination = destination.getText().toString().trim();
+                        String mdormitory = dormitory.getText().toString().trim();
+                        String mmoney = money.getText().toString().trim();
 
-                Toast.makeText(getActivity(), "发布成功", Toast.LENGTH_LONG).show();
+                        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd  hh:mm:ss");
+                        String date = sDateFormat.format(new java.util.Date());
 
-                destination.setText("");
-                dormitory.setText("");
-                money.setText("");
+                        AssignmentService AS = new AssignmentService(getActivity().getApplicationContext());
+                        Assignment assignment = new Assignment();
+                        assignment.setDestination(mdestination);
+                        assignment.setDormitory(mdormitory);
+                        assignment.setMoney(mmoney);
+                        assignment.setUser(LoginActivity.getUsername());
+                        assignment.setStatus("" + date + "发布");
+                        assignment.setre_OR_not("false");
+
+                        AS.Pub(assignment);
+
+                        Toast.makeText(getActivity(), "发布成功", Toast.LENGTH_LONG).show();
+
+                        destination.setText("");
+                        dormitory.setText("");
+                        money.setText("");
+
+                        PubActivity.pubActivity.initView();
+                        PubActivity.pubActivity.mViewPager.setCurrentItem(1);
+                    }
+                });
+
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.show();
             }
-            });
+        });
 
+    }
+
+    private class ChoiceOnClickListener implements DialogInterface.OnClickListener {
+
+        private int which = 0;
+
+        @Override
+        public void onClick(DialogInterface dialogInterface, int which) {
+            this.which = which;
+        }
+
+        public int getWhich() {
+            return which;
+        }
     }
 }

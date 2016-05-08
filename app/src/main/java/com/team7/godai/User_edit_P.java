@@ -1,0 +1,66 @@
+package com.team7.godai;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
+import android.widget.TextView;
+
+import com.team7.godai.Service.UserService;
+import com.team7.godai.domain.User;
+
+import java.util.ArrayList;
+
+/**
+ * Created by mai on 2016/5/3.
+ */
+public class User_edit_P extends AppCompatActivity{
+
+    Toolbar mToolbar;
+
+    public User_edit_P() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.user);
+
+        mToolbar = (Toolbar)findViewById(R.id.tool_bar);
+        mToolbar.setTitle("修改信息");
+        mToolbar.setTitleTextColor(0xffffffff);
+
+        initView();
+    }
+
+    public void initView(){
+        TextView gender = (TextView)findViewById(R.id.user_info_gender);
+        TextView user_id = (TextView)findViewById(R.id.user_info_id);
+        TextView phone = (TextView)findViewById(R.id.user_info_phone);
+        TextView school = (TextView)findViewById(R.id.user_info_school);
+
+        UserService userService = new UserService(getApplicationContext());
+        ArrayList<User> user_info = userService.getUser_info(LoginActivity.getUsername());
+        gender.setText(user_info.get(0).getGender());
+        user_id.setText(user_info.get(0).getUser_id());
+        phone.setText(user_info.get(0).getPhone());
+        school.setText(user_info.get(0).getSchool());
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            Intent intent = new Intent();
+            intent.setClass(User_edit_P.this, PubActivity.class);
+            this.finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+}

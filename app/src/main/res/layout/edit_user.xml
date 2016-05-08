@@ -4,6 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <include layout="@layout/toolbar"/>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="6dp"
+        android:clickable="true"
+        android:background="#ffff"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,16 +41,16 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="@string/destination"
+                android:text="@string/nickname"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
             <EditText
-                android:id="@+id/destination"
+                android:id="@+id/ed_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="@string/destination1"
+                android:hint=""
                 android:textColor="@color/textcolor"
                 android:textColorHint="@color/colorhint"
                 android:textSize="@dimen/f21" />
@@ -54,16 +72,16 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="@string/dormitory"
+                android:text="@string/sex"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
-            <Button
-                android:id="@+id/dormitory"
+            <EditText
+                android:id="@+id/ed_sex"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="@string/dormitory1"
+                android:hint=""
                 android:textColor="@color/textcolor"
                 android:textColorHint="@color/colorhint"
                 android:textSize="@dimen/f21" />
@@ -73,7 +91,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/linecolor" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/spa72"
@@ -85,32 +102,98 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/pad3"
                 android:layout_marginRight="2dp"
-                android:text="@string/money"
+                android:text="@string/id"
                 android:textColor="@color/textcolor"
                 android:textSize="@dimen/f21" />
 
             <EditText
-                android:id="@+id/money"
+                android:id="@+id/ed_id"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="@string/money1"
+                android:hint=""
                 android:textColor="@color/textcolor"
                 android:textColorHint="@color/colorhint"
                 android:textSize="@dimen/f21" />
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/linecolor" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spa72"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/pad3"
+                android:layout_marginRight="2dp"
+                android:text="@string/phone"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/f21" />
+
+            <EditText
+                android:id="@+id/ed_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint=""
+                android:textColor="@color/textcolor"
+                android:textColorHint="@color/colorhint"
+                android:textSize="@dimen/f21" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/linecolor" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spa72"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/pad3"
+                android:layout_marginRight="2dp"
+                android:text="@string/school"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/f21" />
+
+            <EditText
+                android:id="@+id/ed_school"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint=""
+                android:textColor="@color/textcolor"
+                android:textColorHint="@color/colorhint"
+                android:textSize="@dimen/f21" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/linecolor" />
 
     </LinearLayout>
+
+    </android.support.v7.widget.CardView>
     <Button
-        android:id="@+id/pub"
+        android:id="@+id/register_and_login"
         android:layout_width="match_parent"
         android:layout_height="@dimen/spa72"
         android:layout_marginLeft="@dimen/pad3"
         android:layout_marginRight="@dimen/pad3"
         android:layout_marginTop="@dimen/pad3"
         android:background="@drawable/blue_button_background_selector"
-        android:text="@string/pub"
+        android:text="完成修改"
         android:textColor="#fafafa"
         android:textSize="@dimen/f21" />
-
 </LinearLayout>

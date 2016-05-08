@@ -24,13 +24,6 @@
                 android:text="@string/head_name"
                 android:textSize="18sp" />
 
-            <TextView
-                style="@style/normal_Labletextstyle"
-                android:layout_alignBottom="@+id/tv_labletext1"
-                android:layout_marginLeft="2dp"
-                android:layout_toRightOf="@+id/tv_labletext1"
-                android:text="Android"
-                android:textSize="@dimen/f16" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -87,6 +80,30 @@
             android:textSize="15sp" />
     </LinearLayout>
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择登录身份"
+        />
+
+    <RadioGroup
+        android:id="@+id/select_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radio_pub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="以发布者身份登录" />
+
+        <RadioButton
+            android:id="@+id/radio_exp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="以快递员身份登录"/>
+
+    </RadioGroup>
 
 
     <LinearLayout
