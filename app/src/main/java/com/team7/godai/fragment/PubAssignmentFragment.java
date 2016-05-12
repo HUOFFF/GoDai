@@ -21,10 +21,10 @@ import java.util.ArrayList;
 
 public class PubAssignmentFragment extends Fragment {
     private RecyclerView mRecyclerView;
-    private ArrayList<Assignment> assignment = new ArrayList<>();
+    private ArrayList<Assignment> assignment= new ArrayList<>();
     public static PubAssignmentFragment assignmentFragment;
 
-    public PubAssignmentFragment() {
+    public PubAssignmentFragment(){
         assignmentFragment = this;
     }
 
@@ -42,19 +42,18 @@ public class PubAssignmentFragment extends Fragment {
         findView();
         initData();
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
-        mRecyclerView.setAdapter(new Assignment_RecyclerAdapter(getActivity(), assignment));
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(mRecyclerView.getContext()));
+            mRecyclerView.setAdapter(new Assignment_RecyclerAdapter(getActivity(), assignment));
 
     }
 
 
-    public void findView() {
-        mRecyclerView = (RecyclerView) mRecyclerView.findViewById(R.id.recycler_view);
+    public void findView(){
+        mRecyclerView = (RecyclerView)mRecyclerView.findViewById(R.id.recycler_view);
     }
-
-    public void initData() {
+    public void initData(){
         AssignmentService assignmentService = new AssignmentService(getActivity());
-        assignment = assignmentService.GetAssignment();
+        assignment=assignmentService.GetAssignment();
 
     }
 

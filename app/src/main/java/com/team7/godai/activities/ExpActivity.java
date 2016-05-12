@@ -55,6 +55,7 @@ public class ExpActivity extends AppCompatActivity {
         mViewPager = (ViewPager) this.findViewById(R.id.view_pager);
 
 
+
         //初始化ToolBar
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -73,12 +74,12 @@ public class ExpActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.item_one:
                         Intent intent = new Intent();
-                        intent.setClass(ExpActivity.this, User_edit.class);
+                        intent.setClass(ExpActivity.this,User_edit.class);
                         startActivity(intent);
                         break;
                     case R.id.item_two:
                         Intent intent1 = new Intent();
-                        intent1.setClass(ExpActivity.this, PubActivity.class);
+                        intent1.setClass(ExpActivity.this,PubActivity.class);
                         startActivity(intent1);
                         break;
                 }
@@ -87,6 +88,7 @@ public class ExpActivity extends AppCompatActivity {
                 return true;
             }
         });
+
 
 
         //初始化TabLayout的title数据集
@@ -124,6 +126,7 @@ public class ExpActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
 
 
 }

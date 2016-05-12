@@ -4,7 +4,6 @@
 
     <!--login页面-->
     <string name="phone_or_username">请输入用户名</string>
-    <string name="user80">用户名</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="login_pw">登录密码</string>
@@ -26,7 +25,6 @@
     <string name="re_username">领取任务者</string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
-    <string name="drawer_closed">close</string>
 
     <!--个人信息页面-->
     <string name="nickname">昵称</string>
@@ -34,7 +32,6 @@
     <string name="id">身份证</string>
     <string name="sex">性别</string>
     <string name="phone">手机号码</string>
-    <string name="user_typed">用户类型</string>
     <string name="school">学校</string>
 
 

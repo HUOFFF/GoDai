@@ -14,15 +14,14 @@ import java.util.ArrayList;
  */
 public class AssignmentService {
     private DatabaseHelper dbHelper;
-
-    public AssignmentService(Context context) {
-        dbHelper = new DatabaseHelper(context);
+    public AssignmentService(Context context){
+        dbHelper=new DatabaseHelper(context);
     }
 
     public boolean Pub(Assignment assignment) {
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
         String sql = "insert into assignment(destination,dormitory,money,user,status,re_OR_not) values(?,?,?,?,?,?)";
-        Object obj[] = {assignment.getDestination(), assignment.getDormitory(), assignment.getMoney(), assignment.getUser(), assignment.getStatus(), assignment.getre_OR_not()};
+        Object obj[] = {assignment.getDestination(), assignment.getDormitory(), assignment.getMoney(),assignment.getUser(),assignment.getStatus(),assignment.getre_OR_not()};
         sdb.execSQL(sql, obj);
         return true;
     }
@@ -30,9 +29,9 @@ public class AssignmentService {
     public ArrayList GetAssignment() {
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
         String sql = "select * from assignment";
-        Cursor cursor = sdb.rawQuery(sql, null);
+        Cursor cursor = sdb.rawQuery(sql,null);
         ArrayList<Assignment> assignment = new ArrayList<>();
-        while (cursor.moveToNext()) {
+        while(cursor.moveToNext()){
             Assignment item = new Assignment();
             item.setAssignment_id(cursor.getInt(cursor.getColumnIndex("assignment_id")));
             item.setDestination(cursor.getString(cursor.getColumnIndex("destination")));
@@ -50,9 +49,9 @@ public class AssignmentService {
     public ArrayList GetPub_Assignment(String user) {
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
         String sql = "select assignment_id,destination,dormitory,money,user,status from assignment where user=?";
-        Cursor cursor = sdb.rawQuery(sql, new String[]{user});
+        Cursor cursor = sdb.rawQuery(sql,new String[]{user});
         ArrayList<Assignment> assignment = new ArrayList<>();
-        while (cursor.moveToNext()) {
+        while(cursor.moveToNext()){
             Assignment item = new Assignment();
             item.setAssignment_id(cursor.getInt(cursor.getColumnIndex("assignment_id")));
             item.setDestination(cursor.getString(cursor.getColumnIndex("destination")));
@@ -66,26 +65,26 @@ public class AssignmentService {
         return assignment;
     }
 
-    public void changeAssignment_status(String status, String re_OR_not, int assignment_id) {
+    public void changeAssignment_status(String status,String re_OR_not,int assignment_id){
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
-        String sql = "update assignment set status = '" + status + "' , re_OR_not = '" + re_OR_not + "' where assignment_id = " + assignment_id + "";
+        String sql = "update assignment set status = '"+status +"' , re_OR_not = '"+ re_OR_not+"' where assignment_id = "+assignment_id+"";
         sdb.execSQL(sql);
 
     }
 
-    public String getAssignment_status(int assignment_id) {
+    public String getAssignment_status(int assignment_id){
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
         String sql = "select re_OR_not from assignment where assignment_id = ?";
         Cursor cursor = sdb.rawQuery(sql, new String[]{"" + assignment_id + ""});
         cursor.moveToNext();
         String re_OR_not = cursor.getString(cursor.getColumnIndex("re_OR_not"));
         cursor.close();
-        return re_OR_not;
+        return re_OR_not ;
     }
 
     public void FinishAssignment(int assignment_id) {
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
-        String sql = "delete from assignment where assignment_id=" + assignment_id + "";
+        String sql = "delete from assignment where assignment_id="+assignment_id+"";
         sdb.execSQL(sql);
     }
 

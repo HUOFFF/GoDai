@@ -14,15 +14,14 @@ import java.util.ArrayList;
  */
 public class His_AssignmentService {
     private DatabaseHelper dbHelper;
-
-    public His_AssignmentService(Context context) {
-        dbHelper = new DatabaseHelper(context);
+    public His_AssignmentService(Context context){
+        dbHelper=new DatabaseHelper(context);
     }
 
     public boolean Add_FinishAssignment(Assignment assignment) {
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
         String sql = "insert into his_assignment(his_assignment_id,destination,dormitory,money,user,re_user,status) values(?,?,?,?,?,?,?)";
-        Object obj[] = {assignment.getAssignment_id(), assignment.getDestination(), assignment.getDormitory(), assignment.getMoney(), assignment.getUser(), assignment.getRe_User(), assignment.getStatus()};
+        Object obj[] = {assignment.getAssignment_id(),assignment.getDestination(), assignment.getDormitory(), assignment.getMoney(),assignment.getUser(),assignment.getRe_User(),assignment.getStatus()};
         sdb.execSQL(sql, obj);
         return true;
     }
@@ -32,7 +31,7 @@ public class His_AssignmentService {
         String sql = "select * from his_assignment";
         Cursor cursor = sdb.rawQuery(sql, null);
         ArrayList<Assignment> assignment = new ArrayList<>();
-        while (cursor.moveToNext()) {
+        while(cursor.moveToNext()){
             Assignment item = new Assignment();
             item.setAssignment_id(cursor.getInt(cursor.getColumnIndex("his_assignment_id")));
             item.setDestination(cursor.getString(cursor.getColumnIndex("destination")));
@@ -51,7 +50,7 @@ public class His_AssignmentService {
 
     public void FinishAssignment(int assignment_id) {
         SQLiteDatabase sdb = dbHelper.getReadableDatabase();
-        String sql = "delete from his_assignment where " + assignment_id + "";
+        String sql = "delete from his_assignment where "+assignment_id+"";
         sdb.execSQL(sql);
     }
 
